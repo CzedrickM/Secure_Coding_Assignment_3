@@ -1,3 +1,4 @@
+---
 name: "HCL AppScan CodeSweep"
 on:
   push:
@@ -12,26 +13,5 @@ jobs:
           fetch-depth: 0
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2.1
-        with:
-          # API key for connecting to the AppScan service. Required when publish_on_merge is true.
-          asoc_key: # optional
-          # Secret for connecting to the AppScan service. Required when publish_on_merge is true.
-          asoc_secret: # optional
-          # The url of the AppScan service. Defaults to https://cloud.appscan.com.
-          service_url: # optional
-          # Allow connections to a service with an untrusted certificate. Recommended for testing purposes only.
-          acceptssl: # optional
-          # The status of the checks if any security issues are found. One of action_required, failure, or neutral.
-          status: # optional, default is neutral
-          # Publish issues to ASoC when the pull request is merged.
-          publish_on_merge: # optional
-          # The ASoC application id where issues will be published. Required when publish_on_merge is true.
-          application_id: # optional
-          # The status of issues that are pushed to ASoC. One of New, Open, In Progress, Noise, Fixed, or Passed.
-          issue_status: # optional, default is Open
-          # When issues are published on merge, the base name of the scan used to submit those issues. A timestamp is appended to the given base name.
-          scan_base_name: # optional, default is GitHub_CodeSweep
-          # When issues are published on merge, the scan representing those issues can be made a personal scan.
-          personal_scan: # optional
-          env: 
-              GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    env: 
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

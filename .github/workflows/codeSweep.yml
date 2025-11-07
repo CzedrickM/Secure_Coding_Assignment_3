@@ -19,7 +19,7 @@ jobs:
           asoc_secret: # optional
           # The url of the AppScan service. Defaults to https://cloud.appscan.com.
           service_url: # optional
-          Allow connections to a service with an untrusted certificate. Recommended for testing purposes only.
+          # Allow connections to a service with an untrusted certificate. Recommended for testing purposes only.
           acceptssl: # optional
           # The status of the checks if any security issues are found. One of action_required, failure, or neutral.
           status: # optional, default is neutral
